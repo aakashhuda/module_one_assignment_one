@@ -11,3 +11,14 @@ body {
 }
 
 h1 { font-size: 3rem; }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: cyan;
+    color: black;
+    text-align: center;
+    min-height: 200px;
+}
