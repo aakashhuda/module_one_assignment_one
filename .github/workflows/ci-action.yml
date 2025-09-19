@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          script: |
-            echo "Copied all files into the runner"
+
+      - name: "Printing custom message"
+        run: |
+          echo "Copied all files into the runner"
