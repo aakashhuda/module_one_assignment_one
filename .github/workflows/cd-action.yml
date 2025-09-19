@@ -1,0 +1,40 @@
+name: CD - Assignment-2
+
+on:
+  workflow_run:
+    workflows: ["CI - Assignment-2"]
+    types: [completed]
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ensure hello.txt file and display the content
+        run: |
+          if [ ! -f "hello.txt" ]; then
+            echo "hello.txt file doesn't exist"
+            echo "Creating a hello.txt file..."
+            touch /hello.txt
+            echo "Copying index.html file content to hello.txt"
+            cat index.html > hello.txt
+            echo "Copied successfully..."
+            echo "Printing hello.txt file's content"
+            echo "---------------------------------"
+            cat hello.txt
+            echo "---------------------------------"
+          else
+            echo "Printing hello.txt file's content"
+            cat hello.txt
+          fi
+
+      - name: Read the index.html file
+        run: |
+          echo "Reading index.html file..."
+          echo "-------------------------"
+          cat index.html
+          echo "-------------------------"
+          echo "Reading hello.txt file..."
+          cat hello.txt
+          echo "-------------------------"
