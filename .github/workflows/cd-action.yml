@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Ensure hello.txt file and display the content
         run: |
           if [ ! -f "hello.txt" ]; then
