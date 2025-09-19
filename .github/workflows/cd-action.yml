@@ -14,7 +14,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Ensure hello.txt file and display the content
+      - name: Ensuring hello.txt file and display the content
         run: |
           if [ ! -f "hello.txt" ]; then
             echo "hello.txt file doesn't exist"
@@ -28,11 +28,16 @@ jobs:
             cat hello.txt
             echo "---------------------------------"
           else
+            echo "Copying index.html file content to hello.txt"
+            cat index.html > hello.txt
+            echo "Copied successfully..."
             echo "Printing hello.txt file's content"
+            echo "---------------------------------"
             cat hello.txt
+            echo "---------------------------------"
           fi
 
-      - name: Read the index.html file
+      - name: Read & Print the index.html file content
         run: |
           echo "Reading index.html file..."
           echo "-------------------------"
