@@ -43,6 +43,3 @@ jobs:
           echo "-------------------------"
           cat index.html
           echo "-------------------------"
-          echo "Reading hello.txt file..."
-          cat hello.txt
-          echo "-------------------------"
