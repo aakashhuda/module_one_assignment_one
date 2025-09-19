@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Ensure hello.txt file and display the content
         run: |
           if [ ! -f "hello.txt" ]; then
             echo "hello.txt file doesn't exist"
             echo "Creating a hello.txt file..."
-            touch /hello.txt
+            touch hello.txt
             echo "Copying index.html file content to hello.txt"
             cat index.html > hello.txt
             echo "Copied successfully..."
