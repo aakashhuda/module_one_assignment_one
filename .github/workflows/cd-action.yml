@@ -16,7 +16,7 @@ jobs:
           if [ ! -f "hello.txt" ]; then
             echo "hello.txt file doesn't exist"
             echo "Creating a hello.txt file..."
-            touch /hello.txt
+            touch hello.txt
             echo "Copying index.html file content to hello.txt"
             cat index.html > hello.txt
             echo "Copied successfully..."
