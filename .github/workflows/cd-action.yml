@@ -28,6 +28,7 @@ jobs:
             cat hello.txt
             echo "---------------------------------"
           else
+            echo "hello.txt file found!"
             echo "Copying index.html file content to hello.txt"
             cat index.html > hello.txt
             echo "Copied successfully..."
